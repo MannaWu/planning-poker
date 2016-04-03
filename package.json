@@ -4,7 +4,7 @@
   "description": "Planner poker final",
   "main": "index.js",
   "scripts": {
-    "start-ui": "webpack-dev-server --progress --inline --hot",
+    "start-ui": "webpack-dev-server --progress --inline --host 0.0.0.0 --port 8081",
     "start-server": "nodemon ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
