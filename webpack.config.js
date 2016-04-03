@@ -11,7 +11,7 @@ module.exports = {
     ],
     output: {
         path: staticFolder,
-        publicPath: 'http://localhost:8080/poker/',
+        publicPath: 'http://localhost:8081/assets/',
         filename: 'app.js'
     },
     devtool: 'eval-source-map',
