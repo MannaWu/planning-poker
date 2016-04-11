@@ -32,7 +32,7 @@ module.exports = {
         ]
     },
     toolbox: {
-        theme: path.join(__dirname, 'app/theme.scss')
+        theme: path.join(__dirname, 'client/theme.scss')
     },
     postcss: [autoprefixer],
     plugins: [
