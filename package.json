@@ -6,7 +6,17 @@
   "scripts": {
     "start-ui": "webpack-dev-server --progress --inline --host 0.0.0.0 --port 8081",
     "start-server": "nodemon ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/ava/cli.js"
+  },
+  "ava": {
+    "files": [
+      "client/**/*.test.js",
+      "server/**/*.test.js"
+    ],
+    "babel": "inherit",
+    "require": [
+      "babel-register"
+    ]
   },
   "dependencies": {
     "autoprefixer": "6.3.5",
@@ -63,5 +73,8 @@
     "final"
   ],
   "author": "Zsolt Geresdi, Manna Wu",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.14.0"
+  }
 }

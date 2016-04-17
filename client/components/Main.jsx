@@ -18,7 +18,7 @@ export default () => (
                         title='#6688'
                         subtitle='Feed the panda'
                         choices={choices}
-                        playerCount={8}
+                        playerCount={playerCount}
                     />
                 </div>
             </Panel>
