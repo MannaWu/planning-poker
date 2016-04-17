@@ -9,9 +9,11 @@ export default (state = {}, action) => {
     }
 }
 
-export const castVote = (player, value) => ({
-    type: CAST_VOTE,
-    player,
-    value
-})
+export const castVote = (value) => (dispatch, getState) => {
+    dispatch({
+        type: CAST_VOTE,
+        player: getState().user.name,
+        value
+    })
+}
 

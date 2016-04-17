@@ -4,7 +4,7 @@ import { castVote } from '../ducks/votes'
 import { connect } from 'react-redux'
     
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    onClick: () => dispatch(castVote('Player', ownProps.value))
+    onClick: () => dispatch(castVote(ownProps.value))
 })
 
 const _Choice = ({ value, onClick }) =>
