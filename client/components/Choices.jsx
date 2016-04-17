@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, CardActions } from 'react-toolbox'
-import { castVote } from '../store'
+import { castVote } from '../ducks/votes'
 import { connect } from 'react-redux'
     
 const mapDispatchToProps = (dispatch, ownProps) => ({

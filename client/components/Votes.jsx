@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardTitle, CardText } from 'react-toolbox'
-import { castVote } from '../store'
 import { connect } from 'react-redux'
+import { selectVotes } from '../selectors'
 
 const Vote = ({ name, value }) => 
     <Card style={{ width: 80, textAlign: 'center', margin: 8 }}>
@@ -13,7 +13,7 @@ const Vote = ({ name, value }) =>
     </Card>
 
 const mapStateToProps = state => ({
-    votes: Object.keys(state).map(key => ({name: key, value: state[key]}))
+    votes: selectVotes(state)
 })
     
 const _Votes = ({ votes }) =>
