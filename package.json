@@ -6,7 +6,8 @@
   "scripts": {
     "start-ui": "webpack-dev-server --progress --inline --host 0.0.0.0 --port 8081",
     "start-server": "nodemon ./index.js",
-    "test": "./node_modules/ava/cli.js"
+    "test": "./node_modules/ava/cli.js",
+    "test-watch": "./node_modules/ava/cli.js --watch"
   },
   "ava": {
     "files": [
@@ -76,6 +77,7 @@
   "author": "Zsolt Geresdi, Manna Wu",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.14.0"
+    "ava": "^0.14.0",
+    "sinon": "^1.17.3"
   }
 }

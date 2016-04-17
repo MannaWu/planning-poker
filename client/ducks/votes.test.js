@@ -1,9 +1,15 @@
 import test from 'ava'
+import sinon from 'sinon'
 import { CAST_VOTE, castVote } from './votes'
 
 test('castVote() action creator', t => {
-    const action = castVote('Judy Hopps', 8)
+    const action = castVote(8)
     const expected = { type: CAST_VOTE, player: 'Judy Hopps', value: 8 }
-    t.deepEqual(action, expected, 'should create a plain JS object')
+    const dispatch = sinon.spy()
+    const getState = () => ({ user: { name: 'Judy Hopps' }})
+
+    t.is(typeof(action), 'function', 'should create a function')    
+    action(dispatch, getState)
+    t.true(dispatch.calledWith(expected))
 })
 
