@@ -12,7 +12,8 @@
   "ava": {
     "files": [
       "client/**/*.test.js",
-      "server/**/*.test.js"
+      "server/**/*.test.js",
+      "shared/**/*.test.js"
     ],
     "babel": "inherit",
     "require": [

@@ -1,15 +1,15 @@
 import React from 'react'
 import { Input, Button } from 'react-toolbox'
 import { connect } from 'react-redux'
-import { changeUserName, login } from '../ducks/user'
+import { changeUserName, requestJoin } from '../../shared/actions/users'
 
 const mapStateToProps = state => ({
-    value: state.user.name
+    value: state.users.name
 })
 
 const mapDispatchToProps = dispatch => ({
     onChange: name => dispatch(changeUserName(name)),
-    onButtonClick: () => dispatch(login())
+    onButtonClick: () => dispatch(requestJoin())
 })
 
 export const _Login = (props) => {

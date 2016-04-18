@@ -1,4 +1,4 @@
-export const CAST_VOTE = 'planning-poker/vote/cast'
+import { CAST_VOTE } from '../../shared/actions/votes'
 
 export default (state = {}, action) => {
     switch (action.type) {
@@ -8,12 +8,3 @@ export default (state = {}, action) => {
             return state
     }
 }
-
-export const castVote = (value) => (dispatch, getState) => {
-    dispatch({
-        type: CAST_VOTE,
-        player: getState().user.name,
-        value
-    })
-}
-

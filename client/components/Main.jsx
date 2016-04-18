@@ -8,7 +8,7 @@ const playerCount = 8
 const choices = [ 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, '?', 'Pass' ]
 
 const mapStateToProps = state => ({
-    loggedIn: state.user.loggedIn
+    loggedIn: state.users.loggedIn
 })
 
 const _Main = (props) => (
