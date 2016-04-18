@@ -4,5 +4,5 @@ import { default as users } from './reducers/users'
 
 export const createBackendStore = () => createStore(
     combineReducers({ users }),
-    applyMiddleware(createLogger())
+    applyMiddleware(createLogger({ level: { prevState: false, action: 'log', nextState: 'log', error: 'warn' }, colors: {}}))
 )
