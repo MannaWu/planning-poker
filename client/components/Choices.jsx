@@ -12,7 +12,7 @@ const _Choice = ({ value, onClick }) =>
         <Button icon='local_cafe' accent onClick={onClick} /> :
         <Button label={value.toString()} accent onClick={onClick} />
     
-export const Choice = connect(null, mapDispatchToProps)(_Choice);
+export const Choice = connect(null, mapDispatchToProps)(_Choice)
     
 export const Choices = ({ choices }) =>
     <CardActions>

@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import createLogger from 'redux-logger'
-import reduxThunk from 'redux-thunk';
+import reduxThunk from 'redux-thunk'
 import { default as votes } from './reducers/votes'
 import { default as users } from './reducers/users'
 import socketIO from 'socket.io-client' 
