@@ -5,6 +5,8 @@ import socketIO from 'socket.io'
 import path from 'path'
 import chalk from 'chalk'
 import { createBackendStore } from './backendStore'
+import { REQUEST_JOIN } from '../shared/actions/users'
+import { acceptJoin } from './reducers/users'
 
 const app = express()
 const server = http.Server(app)
@@ -21,7 +23,7 @@ const indexHtml = new Promise((resolve, reject) => fs.readFile(
         resolve(data.toString().split('{HOSTNAME}').join(`//${WEBPACK_HOST}:${WEBPACK_PORT}`))
 ))
 
-const store = createBackendStore()
+const store = createBackendStore(webSocket)
 
 app.use('/assets', express.static(
     path.resolve(__dirname, '..', 'assets')))
@@ -32,7 +34,9 @@ app.get('/', (req, res) => indexHtml.then(data => {
 }))
 
 webSocket.on('connection', socket => {
-    socket.on('action', action => store.dispatch(action))
+    socket.on('action', action => {
+        store.dispatch(action)
+    })
 })
 
 server.listen(PORT)

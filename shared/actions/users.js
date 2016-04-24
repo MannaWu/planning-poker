@@ -10,7 +10,7 @@ export const changeUserName = name => ({
 export const requestJoin = () => (dispatch, getState) => {
     dispatch({
         type: REQUEST_JOIN,
-        name: getState().users.name
+        name: getState().user.name
     })
 }
 

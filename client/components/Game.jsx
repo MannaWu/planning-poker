@@ -5,7 +5,7 @@ import { VotesProgressBar } from './VotesProgressBar'
 import { Choices } from './Choices'     
 
 export const Game = ({ title, subtitle, choices, playerCount }) =>
-    <Card>
+    <Card style={{ width: 640, display: 'inline-block', marginRight: 12 }}>
         <CardTitle title={title} subtitle={subtitle} />
         <Votes />
         <CardText>

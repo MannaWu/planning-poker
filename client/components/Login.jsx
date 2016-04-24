@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { changeUserName, requestJoin } from '../../shared/actions/users'
 
 const mapStateToProps = state => ({
-    value: state.users.name
+    value: state.user.name
 })
 
 const mapDispatchToProps = dispatch => ({
