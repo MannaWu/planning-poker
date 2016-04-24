@@ -1,4 +1,4 @@
-import { REQUEST_JOIN, ACCEPT_JOIN } from '../../shared/actions/users'
+import { REQUEST_JOIN } from '../../shared/actions/users'
 
 export default (state = new Map(), action) => {
     switch (action.type) {
@@ -9,9 +9,3 @@ export default (state = new Map(), action) => {
             return state
     }
 }
-
-export const acceptJoin = (user, users) => ({
-    type: ACCEPT_JOIN,
-    user,
-    users
-})

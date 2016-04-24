@@ -14,3 +14,8 @@ export const requestJoin = () => (dispatch, getState) => {
     })
 }
 
+export const acceptJoin = (user, users) => ({
+    type: ACCEPT_JOIN,
+    user,
+    users
+})

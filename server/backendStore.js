@@ -1,35 +1,23 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'
-import createLogger from 'redux-logger'
-import { createSocketIOMiddleware } from '../shared/middleware/socketIOMiddleware'
-import createSagaMiddleware from 'redux-saga'
+import { createStore } from '../shared/store'
 import { default as users } from './reducers/users'
 import { ACCEPT_JOIN } from '../shared/actions/users'
+import { RECEIVE_VOTE } from '../shared/actions/votes'
 import rootSaga from './sagas'; 
 
-export const createBackendStore = webSocket => {
-    const sagaMiddleware = createSagaMiddleware()
-    
-    const socketIOMiddleware = createSocketIOMiddleware(
-        webSocket,
-        [ ACCEPT_JOIN ]
-    )
-    
-    const logger = createLogger({ 
-        level: { 
-            prevState: false, 
-            action: 'log', 
-            nextState: 'log', 
-            error: 'warn' 
-        }, 
-        colors: {}
-    })
-    
-    const store = createStore(
-        combineReducers({ users }),
-        applyMiddleware(sagaMiddleware, socketIOMiddleware, logger)
-    )
-    
-    sagaMiddleware.run(rootSaga, store.getState)
-    
-    return store
-};
+const LOGGER_CONFIG = { 
+    level: { 
+        prevState: false, 
+        action: 'log', 
+        nextState: 'log', 
+        error: 'warn' 
+    }, 
+    colors: {}
+}
+
+export const createBackendStore = webSocket => createStore(
+    {users},
+    rootSaga,
+    [ ACCEPT_JOIN, RECEIVE_VOTE ],
+    webSocket,
+    LOGGER_CONFIG
+)

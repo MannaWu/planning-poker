@@ -5,7 +5,7 @@ const Player = ({name}) => (
     <ListItem
         avatar={<span style={{lineHeight: '40px'}}>{name[0]}</span>}
         caption={name}
-        rightIcon='star'
+        rightIcon='lightbulb_outline'
     />
 )
 
